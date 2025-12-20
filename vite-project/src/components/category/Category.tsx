@@ -37,8 +37,14 @@ const Category = () => {
             icon: CTimg4
         }
     ]
-    function SampleNextArrow(props) {
-  const { className, style, onClick } = props;
+
+type CustomArrowProps = {
+  style?: React.CSSProperties;
+  onClick?: React.MouseEventHandler<HTMLDivElement>
+}
+
+    function SampleNextArrow(props:CustomArrowProps) {
+  const {  style, onClick } = props;
   return (
     <div
       className="bg-secondary rounded-[50%] text-white top-2/4 translate-y-[-50%]"
@@ -49,8 +55,8 @@ const Category = () => {
   );
 }
 
-function SamplePrevArrow(props) {
-  const {  style, onClick, className } = props;
+function SamplePrevArrow(props: CustomArrowProps) {
+  const {  style, onClick } = props;
   return (
     <div
       className="bg-secondary rounded-[50%] text-white top-2/4 translate-y-[-50%]"
